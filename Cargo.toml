@@ -2,6 +2,9 @@
 name = "otptool"
 version = "0.1.0"
 edition = "2021"
+authors = ["Denis Hananein"]
+description = "Simple tool to help you migrate your OTP secrets from Google Authenticator to another app."
+license = "MIT"
 
 
 [dependencies]
