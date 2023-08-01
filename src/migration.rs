@@ -61,4 +61,24 @@ mod tests {
         assert_eq!(param.issuer, "Example");
         assert_eq!(param.secret, "JBSWY3DPEHPK3PXP")
     }
+
+    #[test]
+    fn test_decode_qr_image() {
+        let img_path = std::path::PathBuf::from("src/testdata/qr-test.jpeg");
+        let res = super::decode_from_image(img_path);
+
+        assert!(
+            res.is_ok(),
+            "decode_from_image failed: {}",
+            res.unwrap_err()
+        );
+
+        let params = res.unwrap();
+        assert_eq!(params.len(), 1);
+
+        let param = params.first().unwrap();
+        assert_eq!(param.name, "This_is_an_Example:email@email.com");
+        assert_eq!(param.issuer, "Example_Website");
+        assert_eq!(param.secret, "S6HZS7XT6KQ6AFSR7XEVO")
+    }
 }
