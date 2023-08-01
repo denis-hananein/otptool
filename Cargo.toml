@@ -5,6 +5,7 @@ edition = "2021"
 authors = ["Denis Hananein"]
 description = "Simple tool to help you migrate your OTP secrets from Google Authenticator to another app."
 license = "MIT"
+homepage = "https://github.com/zloylos/otptool"
 
 
 [dependencies]
