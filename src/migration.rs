@@ -30,19 +30,17 @@ pub fn decode_from_link(link: &str) -> anyhow::Result<Vec<OtpParameters>> {
 }
 
 pub fn decode_from_image(image_path: std::path::PathBuf) -> anyhow::Result<Vec<OtpParameters>> {
-    let img = image::open(image_path)?;
+    let img = image::open(image_path)?.to_luma8();
 
-    let decoder = bardecoder::default_decoder();
-    let results = decoder.decode(&img);
+    let mut prepared = rqrr::PreparedImage::prepare(img);
+    let results = prepared.detect_grids();
 
     if results.len() > 1 {
         return Err(anyhow::anyhow!("too much data to decode OTP data"));
     }
 
-    let maybe_result = results.first().unwrap();
-    let result = maybe_result.as_ref().unwrap();
-
-    return decode_from_link(result);
+    let (_, content) = results[0].decode()?;
+    return decode_from_link(&content);
 }
 
 mod tests {

@@ -25,7 +25,7 @@ fn main() {
         return;
     }
 
-    println!("unknown input");
+    println!("unknown input, check --help");
 }
 
 fn print_parameters(otp_parameters: &[otptool::otp::OtpParameters]) {

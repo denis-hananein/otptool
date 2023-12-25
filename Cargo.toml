@@ -9,14 +9,14 @@ homepage = "https://github.com/zloylos/otptool"
 
 
 [dependencies]
-anyhow = "1.0.72"
-bardecoder = "0.4.2"
-base64 = "0.21.2"
-clap = { version = "4.3.19", features = ["derive"] }
+anyhow = "1.0.76"
+base64 = "0.21.5"
+clap = { version = "4.4.11", features = ["derive"] }
 data-encoding = "2.4.0"
-image = "0.24.6"
-prost = "0.11.9"
-url = "2.4.0"
+image = "0.24.7"
+prost = "0.12.3"
+rqrr = "0.6.0"
+url = "2.5.0"
 
 [build-dependencies]
-prost-build = "0.11.9"
+prost-build = "0.12.3"
