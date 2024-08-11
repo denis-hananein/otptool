@@ -1,6 +1,6 @@
 [package]
 name = "otptool"
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 authors = ["Denis Hananein"]
 description = "Simple tool to help you migrate your OTP secrets from Google Authenticator to another app."
@@ -9,14 +9,16 @@ homepage = "https://github.com/zloylos/otptool"
 
 
 [dependencies]
-anyhow = "1.0.76"
-base64 = "0.21.5"
-clap = { version = "4.4.11", features = ["derive"] }
-data-encoding = "2.4.0"
-image = "0.24.7"
-prost = "0.12.3"
-rqrr = "0.6.0"
-url = "2.5.0"
+anyhow = "1.0.86"
+base64 = "0.22.1"
+clap = { version = "4.5.15", features = ["derive"] }
+data-encoding = "2.6.0"
+image = "0.25.2"
+prost = "0.13.1"
+rqrr = "0.7.1"
+url = "2.5.2"
+
+ahash = "=0.8.11"
 
 [build-dependencies]
-prost-build = "0.12.3"
+prost-build = "0.13.1"
