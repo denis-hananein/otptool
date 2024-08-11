@@ -11,7 +11,7 @@ It supports the following formats:
 To install CLI
 
 ```bash
-cargo install otptool
+cargo install --git https://github.com/denis-hananein/otptool.git
 ```
 
 To install as a library:
